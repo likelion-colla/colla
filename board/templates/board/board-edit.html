@@ -12,16 +12,12 @@
 </head>
 <body>
     {% include "price/price-navbar.html" %}
-    <h1 class="ms-5 mb-5">{{ post.title }}</h1>
-    {% if post.head_image %}
-    <div style="width: 600px;">
-        <img class="ms-5 mb-3" src="{{ post.head_image.url }}" alt="Post Head Image" style="width: 100%;">
-    </div>
-    {% endif %}
-    <p class="mx-5" style="white-space: pre-wrap">{{ post.content }}</p>
-    <div class="ms-5 mt-5">
-        <a href="/board/edit/{{post.id}}/">edit</a>&nbsp;
-        <a href="/board/delete/{{post.id}}/">delete</a>
-    </div>
+    <form action="/board/edit/{{post.id}}/" id="blog-edit" method="post">
+        {% csrf_token %}
+		Title: <input type="text" name="title" value="{{ post.title }}">
+		<input type="submit">
+    </form>
+
+    <textarea name="content" form="blog-edit">{{ post.content }}</textarea>
 </body>
 </html>

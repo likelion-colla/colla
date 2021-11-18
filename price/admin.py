@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from price.models import Artist, ArtWork
+
+admin.site.register(Artist)
+admin.site.register(ArtWork)

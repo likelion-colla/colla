@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from price.models import ArtWork
 
 
 def price_main(request):
-    return render(request, "price/price-main.html")
+    arts = ArtWork.objects.all()
+    context = {
+        "arts": arts
+    }
+    return render(request, "price/price-main.html", context)
 
 
 def price_artist(request):

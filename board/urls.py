@@ -3,9 +3,12 @@ from board import views
 
 app_name = "board"
 urlpatterns = [
-    path("", views , name="main"),
-    path("detail/", views , name="detail"), #나중에 detail 지우고 <id:post_id>로 바꾸기
-    path("write/", views , name="write"),
+    path("", views.board_main, name="main"),
+    path("detail/<int:post_id>/", views.board_detail, name="detail"),
+    path("write/", views.board_write, name="write"),
+    path("edit/<int:post_id>/", views.board_edit, name="edit"),
+    path("delete/<int:post_id>/", views.board_delete, name="delete")
+
 
 
 ]
