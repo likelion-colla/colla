@@ -13,11 +13,11 @@
                 <a class="nav-link active" aria-current="page" href="#">컬렉션</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'board:main' %}">게시판</a>
+                <a class="nav-link active" href="{% url 'board:main' %}">게시판</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <span class="nav-link" onclick="logout()" style="cursor: pointer;">로그아웃</span>
+                <span class="nav-link active" onclick="logout()" style="cursor: pointer;">로그아웃</span>
 <!--                <form class="nav-link" method="post" action="{% url 'accounts:logout' %}">-->
 <!--                    {% csrf_token %}-->
 <!--                    <button style="border: none; background-color: white;" type="submit" id="logout-button">로그아웃</button>-->
@@ -25,10 +25,10 @@
             </li>
             {% else %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'accounts:login' %}">로그인</a>
+                <a class="nav-link active" href="{% url 'accounts:login' %}">로그인</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'accounts:sign-up' %}">회원가입</a>
+                <a class="nav-link active" href="{% url 'accounts:sign-up' %}">회원가입</a>
             </li>
             {% endif %}
         </ul>

@@ -15,6 +15,9 @@
 <body style="font-family: 'Noto Sans KR', sans-serif;">
     {% include "price/price-navbar.html" %}
     <div class="container-lg">
+        <div>
+
+        </div>
         {% if post_list %}
         {% for post in post_list %}
         <div class="card my-3 mx-auto" style="width: 80%; height: 180px; cursor: pointer; border-top: none; border-right: none; border-left: none;" onclick="location.href='/board/detail/{{ post.id }}/'">
@@ -28,8 +31,10 @@
               </div>
             </div>
             {% if post.head_image %}
-            <div class="col-md-3">
-              <img src="{{ post.head_image.url }}" class="img-fluid rounded-start " style="max-height: 170px; width: auto; " alt="...">
+            <div class="col-md-3 ">
+                <div class="d-flex justify-content-center">
+                    <img src="{{ post.head_image.url }}" class="img-fluid rounded-start " style="max-height: 120px; width: auto; " alt="...">
+                </div>
             </div>
             {% endif %}
           </div>

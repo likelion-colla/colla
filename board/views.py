@@ -12,6 +12,7 @@ def board_write(request):
         if request.user.is_authenticated:
             new_post = Post()
             new_post.title = request.POST["title"]
+            new_post.category = request.POST["category"]
             new_post.content = request.POST["content"]
             if request.FILES.get("image"):
                 # new_post.head_image = request.FILES["image"]
